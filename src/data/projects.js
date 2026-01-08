@@ -1,32 +1,29 @@
 export const projects = [
   {
-    slug: "botzilla-robotics",
-    name: "Botzilla (Robotics Final Project)",
-    summary:
-      "Finite State Automaton robot with odometry, PD/PID control, sonar scanning, and autonomous behaviors.",
-    tags: ["C++", "Arduino", "Control Systems", "Robotics"],
-    image: "/projects/botzilla.jpg",
-    links: {
-      github: "https://github.com/your-repo",
-      demo: "",
-    },
-    highlights: [
-      "FSA with IDLE/ROTATING/MOVING states",
-      "Servo-mounted sonar for scanning + obstacle logic",
-      "Improved turning accuracy via angle control",
-    ],
+    slug: "iot-home-automation",
+    name: "IoT Home Automation",
+    summary: "Smart home system with IoT integration.",
+    tags: ["IoT", "Embedded", "Sensors"],
+    image: "/projects/iot.jpg",
+    links: { github: "https://github.com/your-repo", demo: "" },
+    highlights: ["Device control + sensors", "Automation rules", "Clean architecture"],
   },
   {
-    slug: "kernel-build-lab",
-    name: "Linux Kernel Build & VM Lab",
-    summary:
-      "Configured and compiled Linux kernel from source on Ubuntu VM; documented reproducible setup.",
-    tags: ["Linux", "VMs", "Systems", "Shell"],
-    image: "/projects/kernel-lab.jpg",
-    links: {
-      github: "https://github.com/your-repo",
-      demo: "",
-    },
-    highlights: ["Reproducible steps", "Troubleshooting notes", "Clean documentation"],
+    slug: "ml-stock-predictor",
+    name: "ML Stock Predictor",
+    summary: "Machine learning model for stock price prediction.",
+    tags: ["Python", "Pandas", "Scikit-Learn"],
+    image: "/projects/ml.jpg",
+    links: { github: "https://github.com/your-repo", demo: "" },
+    highlights: ["Feature engineering", "Model evaluation", "Readable results"],
+  },
+  {
+    slug: "robotic-arm-controller",
+    name: "Robotic Arm Controller",
+    summary: "Custom robotic arm control system.",
+    tags: ["Robotics", "C++", "Control"],
+    image: "/projects/robot.jpg",
+    links: { github: "https://github.com/your-repo", demo: "" },
+    highlights: ["Control logic", "Testing + tuning", "Hardware integration"],
   },
 ];
