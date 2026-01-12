@@ -65,7 +65,7 @@ export default function App() {
                   <div className="h-80 w-60 rounded-2xl  mt-10">
                     <div className="h-full w-full object-cover object-center overflow-hidden rounded-xl">
                       <img
-                        src="/profile-rbg.png"
+                        src="/React-Portfolio/profile-rbg.png"
                         alt="Profile"
                         className="h-full w-full object-contain object-top bg-transparent"
                         
