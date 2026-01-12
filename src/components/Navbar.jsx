@@ -21,9 +21,14 @@ export default function Navbar() {
               <a
                 key={i.href}
                 href={i.href}
-                className="hover:text-white transition-colors"
+                className="relative px-1 py-1 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 {i.label}
+                <span
+                  className="absolute left-1/2 -bottom-1 h-[2px] w-0 bg-blue-500
+                            transition-all duration-300 ease-out
+                            group-hover:w-full group-hover:left-0"
+                />
               </a>
             ))}
           </nav>

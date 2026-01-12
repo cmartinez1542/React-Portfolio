@@ -4,6 +4,7 @@ import Container from "../components/Container";
 import ProjectCard from "../components/ProjectCard";
 import { site } from "../data/site";
 import { projects } from "../data/projects";
+import { Mail, Github, Linkedin } from "lucide-react"; 
 
 function IconCode() {
   return (
@@ -25,9 +26,17 @@ function IconDB() {
 }
 function IconGear() {
   return (
-    <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7z" />
-      <path d="M19.4 15a7.8 7.8 0 0 0 .1-2l2-1.2-2-3.4-2.3.5a7.6 7.6 0 0 0-1.7-1l-.3-2.3H10.8l-.3 2.3a7.6 7.6 0 0 0-1.7 1l-2.3-.5-2 3.4 2 1.2a7.8 7.8 0 0 0 .1 2l-2 1.2 2 3.4 2.3-.5c.5.4 1.1.7 1.7 1l.3 2.3h4.4l.3-2.3c.6-.3 1.2-.6 1.7-1l2.3.5 2-3.4-2-1.2z" />
+    <svg
+      viewBox="0 0 24 24"
+      className="h-10 w-10"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
     </svg>
   );
 }
@@ -97,26 +106,64 @@ export default function App() {
             Experienced in building innovative solutions and analyzing complex datasets.
           </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-3 text-center">
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <div className="mx-auto text-neutral-800">
-                <IconCode />
-              </div>
-              <h3 className="mt-4 font-semibold">Embedded Systems</h3>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <div className="mx-auto text-neutral-800">
-                <IconDB />
-              </div>
-              <h3 className="mt-4 font-semibold">Data Science & ML</h3>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <div className="mx-auto text-neutral-800">
-                <IconGear />
-              </div>
-              <h3 className="mt-4 font-semibold">Software Development</h3>
-            </div>
-          </div>
+<div className="mt-10 grid gap-6 sm:grid-cols-3 text-center">
+  {/* Embedded Systems */}
+  <div className="group relative rounded-xl border border-neutral-200 bg-white p-6 overflow-hidden transition-colors duration-300">
+    {/* gradient sweep */}
+    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                    bg-gradient-to-tl from-blue-500/0 via-blue-500/10 to-blue-500/0" />
+    {/* border glow */}
+    <div className="pointer-events-none absolute inset-0 rounded-xl ring-0 ring-blue-500/0
+                    group-hover:ring-1 group-hover:ring-blue-500/20 transition-all duration-300" />
+
+    <div className="relative">
+      <div className="mx-auto text-neutral-800 transition-transform duration-300 ease-out
+                      group-hover:-translate-y-0.5 group-hover:scale-[1.03]">
+        <IconCode />
+      </div>
+      <h3 className="mt-4 font-semibold transition-colors duration-300 group-hover:text-blue-700">
+        Embedded Systems
+      </h3>
+    </div>
+  </div>
+
+  {/* Data Science & ML */}
+  <div className="group relative rounded-xl border border-neutral-200 bg-white p-6 overflow-hidden transition-colors duration-300">
+    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                    bg-gradient-to-tl from-blue-500/0 via-blue-500/10 to-blue-500/0" />
+    <div className="pointer-events-none absolute inset-0 rounded-xl ring-0 ring-blue-500/0
+                    group-hover:ring-1 group-hover:ring-blue-500/20 transition-all duration-300" />
+
+    <div className="relative">
+      <div className="mx-auto text-neutral-800 transition-transform duration-300 ease-out
+                      group-hover:-translate-y-0.5 group-hover:scale-[1.03]">
+        <IconDB />
+      </div>
+      <h3 className="mt-4 font-semibold transition-colors duration-300 group-hover:text-blue-700">
+        Data Science & ML
+      </h3>
+    </div>
+  </div>
+
+  {/* Software Development */}
+  <div className="group relative rounded-xl border border-neutral-200 bg-white p-6 overflow-hidden transition-colors duration-300">
+    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                    bg-gradient-to-tl from-blue-500/0 via-blue-500/10 to-blue-500/0" />
+    <div className="pointer-events-none absolute inset-0 rounded-xl ring-0 ring-blue-500/0
+                    group-hover:ring-1 group-hover:ring-blue-500/20 transition-all duration-300" />
+
+    <div className="relative">
+      <div className="mx-auto text-neutral-800 transition-transform duration-300 ease-out
+                      group-hover:-translate-y-0.5 group-hover:scale-[1.03]">
+        <IconGear />
+      </div>
+      <h3 className="mt-4 font-semibold transition-colors duration-300 group-hover:text-blue-700">
+        Software Development
+      </h3>
+    </div>
+  </div>
+</div>
+
         </Container>
       </section>
 
@@ -132,36 +179,61 @@ export default function App() {
         </Container>
       </section>
 
-      {/* CONTACT (Get in Touch) */}
-      <section id="contact" className="py-14 bg-neutral-50">
-        <Container>
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold">Get In Touch</h2>
-          <p className="mt-3 text-center text-neutral-600">
-            Feel free to reach out for collaborations or any questions.
-          </p>
+{/* CONTACT (Get in Touch) */}
+<section id="contact" className="py-14 bg-neutral-50">
+  <Container>
+    <h2 className="text-center text-2xl sm:text-3xl font-semibold">Get In Touch</h2>
+    <p className="mt-3 text-center text-neutral-600">
+      Feel free to reach out for collaborations or any questions.
+    </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-3 text-center">
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <p className="font-semibold">Email</p>
-              <a className="mt-2 block text-neutral-600 underline" href={`mailto:${site.email}`}>
-                {site.email}
-              </a>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <p className="font-semibold">LinkedIn</p>
-              <a className="mt-2 block text-neutral-600 underline" href={site.links.linkedin} target="_blank" rel="noreferrer">
-                linkedin.com
-              </a>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-6">
-              <p className="font-semibold">GitHub</p>
-              <a className="mt-2 block text-neutral-600 underline" href={site.links.github} target="_blank" rel="noreferrer">
-                github.com
-              </a>
-            </div>
-          </div>
-        </Container>
-      </section>
+    <div className="mt-10 grid gap-6 sm:grid-cols-3 text-center">
+      {/* Email */}
+      <a
+        href={`mailto:${site.email}`}
+        className="group rounded-xl border border-neutral-200 bg-white p-6 transition-all duration-300
+                   hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 hover:border-blue-200"
+      >
+        <div className="mx-auto w-fit rounded-lg bg-blue-50 p-3 transition-colors duration-300 group-hover:bg-blue-100">
+          <Mail className="h-6 w-6 text-blue-700" />
+        </div>
+        <p className="mt-4 font-semibold">Email</p>
+        <p className="mt-1 text-sm text-neutral-600 break-all">{site.email}</p>
+      </a>
+
+      {/* LinkedIn */}
+      <a
+        href={site.links.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        className="group rounded-xl border border-neutral-200 bg-white p-6 transition-all duration-300
+                   hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 hover:border-blue-200"
+      >
+        <div className="mx-auto w-fit rounded-lg bg-blue-50 p-3 transition-colors duration-300 group-hover:bg-blue-100">
+          <Linkedin className="h-6 w-6 text-blue-700" />
+        </div>
+        <p className="mt-4 font-semibold">LinkedIn</p>
+        <p className="mt-1 text-sm text-neutral-600">View profile</p>
+      </a>
+
+      {/* GitHub */}
+      <a
+        href={site.links.github}
+        target="_blank"
+        rel="noreferrer"
+        className="group rounded-xl border border-neutral-200 bg-white p-6 transition-all duration-300
+                   hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 hover:border-blue-200"
+      >
+        <div className="mx-auto w-fit rounded-lg bg-blue-50 p-3 transition-colors duration-300 group-hover:bg-blue-100">
+          <Github className="h-6 w-6 text-blue-700" />
+        </div>
+        <p className="mt-4 font-semibold">GitHub</p>
+        <p className="mt-1 text-sm text-neutral-600">See repositories</p>
+      </a>
+    </div>
+  </Container>
+</section>
+
 
       <Footer />
     </div>
