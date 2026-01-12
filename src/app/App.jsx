@@ -51,7 +51,7 @@ export default function App() {
         {/* background banner */}
         <div
           className="h-[320px] sm:h-[360px] w-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/hero.png')" }}
+          style={{ backgroundImage: "url('/React-Portfolio/hero.png')" }}
         />
         {/* dark overlay */}
         <div className="absolute inset-0 h-[320px] sm:h-[360px] bg-black/45" />
