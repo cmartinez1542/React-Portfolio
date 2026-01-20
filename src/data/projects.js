@@ -31,7 +31,7 @@ export const projects = [
   name: "Server Deployment Infrastructure",
   summary: "Home-lab style server deployment and infrastructure setup for services and networking.",
   tags: ["Linux", "Networking", "SysAdmin", "Automation"],
-  image: "/projects/server-infra-cover.png",
+  image: "/React-Portfolio/projects/server-infra-cover.png",
   links: {
     github: "https://github.com/davidmtzh/Server-Deployment-Infrasructure",
     demo: ""
@@ -47,7 +47,7 @@ export const projects = [
   name: "Quintex RPG",
   summary: "Unity-based RPG project with structured gameplay systems and version-controlled development.",
   tags: ["Unity", "C#", "Game Dev", "Git"],
-  image: "/projects/quintex-rpg-cover.png",
+  image: "/React-Portfolio/projects/quintex-rpg-cover.png",
   links: {
     github: "https://github.com/cmartinez1542/Quintex-RPG/tree/main",
     demo: ""
@@ -63,7 +63,7 @@ export const projects = [
   name: "React Portfolio Website",
   summary: "Responsive portfolio website built with React + Vite + Tailwind, deployed on GitHub Pages.",
   tags: ["React", "Vite", "Tailwind", "GitHub Pages"],
-  image: "/projects/react-portfolio-cover.png",
+  image: "/React-Portfolio/projects/react-portfolio-cover.png",
   links: {
     github: "https://github.com/cmartinez1542/React-Portfolio",
     demo: "" 
