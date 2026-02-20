@@ -6,7 +6,7 @@ export const site = {
   links: {
     github: "https://github.com/davidmtzh",
     linkedin: "https://www.linkedin.com/in/carlos-d-martinez-6bb753363/",
-    resume: "/React-Portfolio/public/resume.pdf",
+    resume: "/React-Portfolio/resume.pdf",
   },
   tagline:
     "I build practical systems across embedded hardware, robotics, and data-driven software. I care about clean architecture, measurable results, and shipping.",

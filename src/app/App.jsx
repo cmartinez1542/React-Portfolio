@@ -102,8 +102,8 @@ export default function App() {
         <Container>
           <h2 className="text-center text-2xl sm:text-3xl font-semibold">About Me</h2>
           <p className="mt-3 text-center text-neutral-600 max-w-3xl mx-auto">
-            Passionate computer scientist with a focus on embedded systems and data science.
-            Experienced in building innovative solutions and analyzing complex datasets.
+            Passionate computer scientist with a focus on Embedded Systems, Data Science and Machine Learning.
+            5+ years of experience teaching, researching, and building Software and Hardware systems in educational settings.
           </p>
 
 <div className="mt-10 grid gap-6 sm:grid-cols-3 text-center">
@@ -171,6 +171,12 @@ export default function App() {
       <section id="projects" className="py-14">
         <Container>
           <h2 className="text-center text-2xl sm:text-3xl font-semibold">My Projects</h2>
+          <p className="mt-3 text-center text-neutral-600 max-w-3xl mx-auto">
+            This are the projects that I managed to save and "properly" documented. 
+            I have built many more projects that I haven't had the chance to document and upload, 
+            but these are some highlights that I'm proud of. I am still in the process of 
+            documenting and uploading more projects, and optimizeting the ones that are already here, so stay tuned for updates!
+          </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {projects.map((p) => (
               <ProjectCard key={p.slug} project={p} />
