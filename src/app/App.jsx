@@ -175,7 +175,7 @@ export default function App() {
             This are the projects that I managed to save and "properly" documented. 
             I have built many more projects that I haven't had the chance to document and upload, 
             but these are some highlights that I'm proud of. I am still in the process of 
-            documenting and uploading more projects, and optimizeting the ones that are already here, so stay tuned for updates!
+            documenting and uploading more projects, and optimizing the ones that are already here, so stay tuned for updates!
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {projects.map((p) => (
