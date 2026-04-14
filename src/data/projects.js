@@ -59,7 +59,7 @@ export const projects = [
     image: "/React-Portfolio/projects/project2.png",
     links: {
       github: "https://github.com/davidmtzh/AI-Autonomous-Agent",
-      demo: "/React-Portfolio/robo.gif",
+      demo: "/React-Portfolio/projects/robo.gif",
     },
     highlights: [
       "Implemented control logic for autonomous robot behavior",
