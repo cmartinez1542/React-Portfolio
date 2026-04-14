@@ -177,7 +177,7 @@ export default function App() {
             but these are some highlights that I'm proud of. I am still in the process of 
             documenting and uploading more projects, and optimizing the ones that are already here, so stay tuned for updates!
           </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3 items-stretch">
             {projects.map((p) => (
               <ProjectCard key={p.slug} project={p} />
             ))}

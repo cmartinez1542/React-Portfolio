@@ -8,7 +8,7 @@ export const projects = [
     image: "/React-Portfolio/projects/circuit-minds-cover.png",
     links: {
       github: "https://github.com/davidmtzh/circuit-minds",
-      demo: "https://circuit-minds-llinuep79-davidmtzhs-projects.vercel.app/",
+      demo: "https://circuit-minds-web.vercel.app/",
     },
     highlights: [
       "Built a multi-app monorepo with separate web, app, and API services",
@@ -25,7 +25,7 @@ export const projects = [
     image: "/React-Portfolio/projects/server-infra-cover.png",
     links: {
       github: "https://github.com/davidmtzh/Server-Deployment-Infrasructure",
-      demo: "",
+      
     },
     highlights: [
       "Configured service-based infrastructure across virtualized systems",
@@ -59,7 +59,7 @@ export const projects = [
     image: "/React-Portfolio/projects/project2.png",
     links: {
       github: "https://github.com/davidmtzh/AI-Autonomous-Agent",
-      demo: "",
+      demo: "/React-Portfolio/robo.gif",
     },
     highlights: [
       "Implemented control logic for autonomous robot behavior",
@@ -76,7 +76,7 @@ export const projects = [
     image: "/React-Portfolio/projects/ml-skills-cover.png",
     links: {
       github: "https://github.com/davidmtzh/Forecasting-Future-Skills",
-      demo: "",
+      
     },
     highlights: [
       "Built data preparation and feature engineering pipelines for structured analysis",
