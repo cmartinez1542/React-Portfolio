@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import { site } from "../data/site";
 import { projects } from "../data/projects";
 import { Mail, Github, Linkedin } from "lucide-react"; 
+import AzureDevOpsDeploymentSeries from "../components/AzureDevOpsDeploymentSeries";
 
 function IconCode() {
   return (
@@ -184,6 +185,8 @@ export default function App() {
           </div>
         </Container>
       </section>
+      
+      <AzureDevOpsDeploymentSeries />
 
 {/* CONTACT (Get in Touch) */}
 <section id="contact" className="py-14 bg-neutral-50">
