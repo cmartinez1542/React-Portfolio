@@ -1,6 +1,39 @@
 import React from "react";
 import { Cloud, Github, Workflow, Server, Wrench, CheckCircle2, ExternalLink } from "lucide-react";
 
+const evidenceImages = [
+  {
+    src: "/React-Portfolio/azure-evidence/github-actions-success.png",
+    alt: "GitHub Actions workflow showing successful build and deploy jobs",
+    label: "GitHub Actions Success",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/build-job-success.png",
+    alt: "GitHub Actions build job steps completed successfully",
+    label: "Build Job",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/deploy-job-success.png",
+    alt: "GitHub Actions deploy job steps completed successfully",
+    label: "Deploy Job",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/azure-app-service-overview.png",
+    alt: "Azure App Service overview for eshoponweb-carlos",
+    label: "Azure App Service",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/eshoponweb-storefront.png",
+    alt: "eShopOnWeb storefront running on Azure App Service",
+    label: "Live Storefront",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/eshoponweb-admin.png",
+    alt: "eShopOnWeb admin product catalog running on Azure App Service",
+    label: "Admin Interface",
+  },
+];
+
 const azureProjects = [
   {
     title: "GitHub Actions CI/CD to Azure App Service",
@@ -15,7 +48,7 @@ const azureProjects = [
       "Configured App Service environment variables for Development/in-memory database mode",
     ],
     tools: ["Azure App Service", "GitHub Actions", ".NET 8", "Kudu", "Azure Cloud Shell"],
-    status: "Completed",
+    icon: Github,
   },
   {
     title: "Azure DevOps Pipeline Deployment",
@@ -29,7 +62,7 @@ const azureProjects = [
       "Compared Azure DevOps pipelines with GitHub Actions workflows",
     ],
     tools: ["Azure DevOps", "YAML", "Build Artifacts", "Agent Pools", "Azure Pipelines"],
-    status: "Completed",
+    icon: Workflow,
   },
   {
     title: "Azure Resource Management and App Hosting",
@@ -44,100 +77,131 @@ const azureProjects = [
       "Practiced resource cleanup to avoid unnecessary billing",
     ],
     tools: ["Azure Portal", "Resource Groups", "App Service Plan", "Deployment Center", "Monitoring Logs"],
-    status: "Completed",
+    icon: Server,
   },
 ];
 
 export default function AzureDevOpsDeploymentSeries() {
   return (
-    <section className="w-full bg-slate-950 px-4 py-20 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-14 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">
-              <Cloud className="h-4 w-4" />
-              Cloud Deployment Series
-            </div>
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              Azure Cloud & DevOps Deployment Series
-            </h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-              A hands-on cloud deployment series focused on building, troubleshooting, and deploying .NET applications using Azure App Service, GitHub Actions, Azure DevOps, and Azure runtime diagnostics.
-            </p>
+    <section id="azure-devops" className="py-14 bg-neutral-50">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-100">
+            <Cloud className="h-6 w-6" />
           </div>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-950">
+            Azure Cloud & DevOps Deployment Series
+          </h2>
+          <p className="mt-3 max-w-3xl mx-auto text-neutral-600">
+            A hands-on cloud deployment series focused on building, troubleshooting, and deploying .NET applications using Azure App Service, GitHub Actions, Azure DevOps, and Azure runtime diagnostics.
+          </p>
+        </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-cyan-950/40">
-            <h3 className="mb-4 text-xl font-semibold">What this demonstrates</h3>
-            <div className="grid gap-3 text-sm text-slate-300">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" />
-                CI/CD workflow configuration from source control to cloud deployment.
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" />
-                Real deployment troubleshooting using logs, Kudu, and Azure App Settings.
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" />
-                Understanding of build artifacts, deployment jobs, and application runtime configuration.
-              </div>
+        <div className="mt-10 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <h3 className="text-lg font-semibold text-neutral-950">What this demonstrates</h3>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            <div className="flex gap-3 text-sm text-neutral-600">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
+              <span>CI/CD workflow configuration from source control to cloud deployment.</span>
+            </div>
+            <div className="flex gap-3 text-sm text-neutral-600">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
+              <span>Deployment troubleshooting using logs, Kudu, and Azure App Settings.</span>
+            </div>
+            <div className="flex gap-3 text-sm text-neutral-600">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
+              <span>Build artifacts, deployment jobs, and application runtime configuration.</span>
             </div>
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {azureProjects.map((project, index) => (
-            <article
-              key={project.title}
-              className="group flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/80 p-6 shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/50 hover:bg-slate-900"
-            >
-              <div className="mb-5 flex items-start justify-between gap-4">
-                <div className="rounded-2xl bg-cyan-400/10 p-3 text-cyan-300 ring-1 ring-cyan-400/20">
-                  {index === 0 ? <Github className="h-6 w-6" /> : index === 1 ? <Workflow className="h-6 w-6" /> : <Server className="h-6 w-6" />}
-                </div>
-                <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-400/20">
-                  {project.status}
-                </span>
-              </div>
+        <div className="mt-10 rounded-xl border border-neutral-200 bg-white p-4 shadow-sm">
+          <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h3 className="text-lg font-semibold text-neutral-950">Deployment Evidence</h3>
+              <p className="text-sm text-neutral-600">
+                Screenshots from the successful workflow, Azure App Service, and deployed eShopOnWeb application.
+              </p>
+            </div>
+            <p className="text-xs text-neutral-500">Scroll horizontally</p>
+          </div>
 
-              <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-              <p className="mt-1 text-sm font-medium text-cyan-200">{project.subtitle}</p>
-              <p className="mt-4 text-sm leading-6 text-slate-300">{project.description}</p>
+          <div className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory">
+            {evidenceImages.map((image) => (
+              <figure
+                key={image.src}
+                className="min-w-[260px] sm:min-w-[360px] lg:min-w-[420px] snap-start overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-44 sm:h-56 w-full object-cover object-top"
+                  loading="lazy"
+                />
+                <figcaption className="border-t border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-700">
+                  {image.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
 
-              <div className="mt-6">
-                <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-slate-200">
-                  <Wrench className="h-4 w-4 text-cyan-300" />
-                  Key work
-                </h4>
-                <ul className="space-y-2 text-sm text-slate-300">
-                  {project.highlights.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300"
-                  >
-                    {tool}
+        <div className="mt-8 grid gap-6 lg:grid-cols-3 items-stretch">
+          {azureProjects.map((project) => {
+            const Icon = project.icon;
+            return (
+              <article
+                key={project.title}
+                className="group flex h-full flex-col rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 hover:border-blue-200"
+              >
+                <div className="mb-5 flex items-start justify-between gap-4">
+                  <div className="rounded-lg bg-blue-50 p-3 text-blue-700 transition-colors duration-300 group-hover:bg-blue-100">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700 ring-1 ring-green-100">
+                    Completed
                   </span>
-                ))}
-              </div>
-            </article>
-          ))}
+                </div>
+
+                <h3 className="text-lg font-semibold text-neutral-950">{project.title}</h3>
+                <p className="mt-1 text-sm font-medium text-blue-700">{project.subtitle}</p>
+                <p className="mt-4 text-sm leading-6 text-neutral-600">{project.description}</p>
+
+                <div className="mt-6">
+                  <h4 className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-700">
+                    <Wrench className="h-4 w-4 text-blue-700" />
+                    Key work
+                  </h4>
+                  <ul className="space-y-2 text-sm text-neutral-600">
+                    {project.highlights.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-700" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-auto pt-6 flex flex-wrap gap-2">
+                  {project.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-600"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-6">
+        <div className="mt-8 rounded-xl border border-blue-100 bg-blue-50 p-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h3 className="text-xl font-semibold">Final outcome</h3>
-              <p className="mt-2 max-w-4xl text-sm leading-6 text-slate-300">
+              <h3 className="text-lg font-semibold text-neutral-950">Final outcome</h3>
+              <p className="mt-2 max-w-4xl text-sm leading-6 text-neutral-600">
                 The final eShopOnWeb deployment successfully built and deployed through GitHub Actions, ran on Azure App Service, and loaded both the storefront and admin interface after resolving CI/CD and runtime configuration issues.
               </p>
             </div>
@@ -145,7 +209,7 @@ export default function AzureDevOpsDeploymentSeries() {
               href="https://github.com/davidmtzh/eShopOnWeb"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-blue-700 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-800"
             >
               View Repository
               <ExternalLink className="h-4 w-4" />
