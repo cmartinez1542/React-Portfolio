@@ -3,34 +3,64 @@ import { Cloud, Github, Workflow, Server, Wrench, CheckCircle2, ExternalLink } f
 
 const evidenceImages = [
   {
-    src: "/React-Portfolio/azure-evidence/github-actions-success.png",
-    alt: "GitHub Actions workflow showing successful build and deploy jobs",
-    label: "GitHub Actions Success",
+    src: "/React-Portfolio/azure-evidence/01_app_services_empty_before_creation.png",
+    alt: "Azure App Services page before the web app was created",
+    label: "Before App Creation",
   },
   {
-    src: "/React-Portfolio/azure-evidence/build-job-success.png",
-    alt: "GitHub Actions build job steps completed successfully",
-    label: "Build Job",
+    src: "/React-Portfolio/azure-evidence/02_azure_web_app_default_page.png",
+    alt: "Default Azure Web App page showing the app is running and waiting for content",
+    label: "Default Web App Page",
   },
   {
-    src: "/React-Portfolio/azure-evidence/deploy-job-success.png",
-    alt: "GitHub Actions deploy job steps completed successfully",
-    label: "Deploy Job",
+    src: "/React-Portfolio/azure-evidence/03_deployment_center_github_setup.png",
+    alt: "Azure Deployment Center configured with GitHub repository and branch",
+    label: "Deployment Center Setup",
   },
   {
-    src: "/React-Portfolio/azure-evidence/azure-app-service-overview.png",
-    alt: "Azure App Service overview for eshoponweb-carlos",
-    label: "Azure App Service",
+    src: "/React-Portfolio/azure-evidence/04_github_actions_runs_started.png",
+    alt: "GitHub Actions workflow runs started after Azure Deployment Center setup",
+    label: "GitHub Actions Started",
   },
   {
-    src: "/React-Portfolio/azure-evidence/eshoponweb-storefront.png",
-    alt: "eShopOnWeb storefront running on Azure App Service",
+    src: "/React-Portfolio/azure-evidence/05_build_publish_in_progress.png",
+    alt: "GitHub Actions build and publish steps running",
+    label: "Build and Publish",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/06_artifact_download_failure.png",
+    alt: "GitHub Actions deploy job showing artifact download failure during troubleshooting",
+    label: "Artifact Troubleshooting",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/07_workflow_success_summary.png",
+    alt: "GitHub Actions workflow summary showing successful build and deploy jobs",
+    label: "Workflow Success",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/08_build_job_success_details.png",
+    alt: "GitHub Actions build job details showing successful steps",
+    label: "Build Job Success",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/09_deploy_job_success_details.png",
+    alt: "GitHub Actions deploy job details showing successful Azure deployment",
+    label: "Deploy Job Success",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/10_runtime_500_30_startup_error.png",
+    alt: "Azure App Service HTTP 500.30 startup error before runtime configuration was fixed",
+    label: "Runtime Error Debugging",
+  },
+  {
+    src: "/React-Portfolio/azure-evidence/11_final_eshoponweb_site_running.png",
+    alt: "Final eShopOnWeb storefront running successfully on Azure App Service",
     label: "Live Storefront",
   },
   {
-    src: "/React-Portfolio/azure-evidence/eshoponweb-admin.png",
-    alt: "eShopOnWeb admin product catalog running on Azure App Service",
-    label: "Admin Interface",
+    src: "/React-Portfolio/azure-evidence/12_azure_app_service_overview_success.png",
+    alt: "Azure App Service overview showing successful deployment and GitHub project connection",
+    label: "Azure Overview Success",
   },
 ];
 
