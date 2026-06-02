@@ -191,7 +191,9 @@ export default function AzureDevOpsDeploymentSeries() {
     selectedProjectIndex !== null ? azureProjects[selectedProjectIndex] : null;
 
   const selectedEvidence =
-    selectedProject?.evidenceIndexes.map((index) => evidenceImages[index]) || [];
+  selectedProject?.evidenceIndexes
+    .map((index) => evidenceImages[index])
+    .filter(Boolean) || [];
 
   const handleEvidenceClick = (projectIndex) => {
     if (selectedProjectIndex === projectIndex) {
