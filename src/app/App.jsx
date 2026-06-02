@@ -103,8 +103,7 @@ export default function App() {
         <Container>
           <h2 className="text-center text-2xl sm:text-3xl font-semibold">About Me</h2>
           <p className="mt-3 text-center text-neutral-600 max-w-3xl mx-auto">
-            Passionate computer scientist with a focus on Embedded Systems, Data Science and Machine Learning.
-            5+ years of experience teaching, researching, and building Software and Hardware systems in educational settings.
+            Computer Science graduate with hands-on experience in backend development, DevOps, cloud deployment, embedded systems, and data-driven applications. Skilled in building and troubleshooting software systems across the full development lifecycle, from writing application logic and working with databases to configuring CI/CD pipelines and deploying applications to cloud environments. Over 5 years of experience teaching technical concepts, developing software and hardware projects, and applying practical problem-solving skills in educational and engineering-focused settings.
           </p>
 
 <div className="mt-10 grid gap-6 sm:grid-cols-3 text-center">
