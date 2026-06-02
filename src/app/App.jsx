@@ -173,11 +173,9 @@ export default function App() {
         <Container>
           <h2 className="text-center text-2xl sm:text-3xl font-semibold">My Projects</h2>
           <p className="mt-3 text-center text-neutral-600 max-w-3xl mx-auto">
-            This are the projects that I managed to save and "properly" documented. 
-            I have built many more projects that I haven't had the chance to document and upload, 
-            but these are some highlights that I'm proud of. I am still in the process of 
-            documenting and uploading more projects, and optimizing the ones that are already here, so stay tuned for updates!
+This section highlights selected projects that demonstrate my experience in software development, data analysis, cloud deployment, and problem-solving. These projects represent work I have documented and refined, with additional projects and improvements currently in progress.
           </p>
+          <AzureDevOpsDeploymentSeries />
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3 items-stretch">
             {projects.map((p) => (
               <ProjectCard key={p.slug} project={p} />
@@ -186,7 +184,7 @@ export default function App() {
         </Container>
       </section>
       
-      <AzureDevOpsDeploymentSeries />
+      
 
 {/* CONTACT (Get in Touch) */}
 <section id="contact" className="py-14 bg-neutral-50">
