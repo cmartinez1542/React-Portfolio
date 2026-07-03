@@ -277,9 +277,6 @@ export default function AzureDevOpsDeploymentSeries() {
                     <Icon className="h-6 w-6" />
                   </div>
 
-                  <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700 ring-1 ring-green-100">
-                    Completed
-                  </span>
                 </div>
 
                 <h3 className="text-lg font-semibold text-neutral-950">

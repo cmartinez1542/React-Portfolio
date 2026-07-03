@@ -6,6 +6,7 @@ import { site } from "../data/site";
 import { projects } from "../data/projects";
 import { Mail, Github, Linkedin } from "lucide-react"; 
 import AzureDevOpsDeploymentSeries from "../components/AzureDevOpsDeploymentSeries";
+import AIVoiceHealthcareProject from "../components/AIVoiceHealthcareProject";
 
 function IconCode() {
   return (
@@ -174,6 +175,7 @@ export default function App() {
           <p className="mt-3 text-center text-neutral-600 max-w-3xl mx-auto">
 This section highlights selected projects that demonstrate my experience in software development, data analysis, cloud deployment, and problem-solving. These projects represent work I have documented and refined, with additional projects and improvements currently in progress.
           </p>
+          <AIVoiceHealthcareProject />
           <AzureDevOpsDeploymentSeries />
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3 items-stretch">
             {projects.map((p) => (
