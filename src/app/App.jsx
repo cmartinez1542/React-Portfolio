@@ -6,6 +6,8 @@ import { site } from "../data/site";
 import { projects } from "../data/projects";
 import { Mail, Github, Linkedin } from "lucide-react"; 
 import AzureDevOpsDeploymentSeries from "../components/AzureDevOpsDeploymentSeries";
+import AIVoiceTestAgentSeries from "../components/AIVoiceTestAgentSeries";
+import CircuitMindsShowcase from "../components/CircuitMindsShowcase";
 
 function IconCode() {
   return (
@@ -44,7 +46,7 @@ function IconGear() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-neutral-950">
+    <div className="min-h-screen bg-slate-50 text-neutral-950">
       <Navbar />
 
       {/* HERO (matches the screenshot style) */}
@@ -99,7 +101,7 @@ export default function App() {
       </section>
 
       {/* ABOUT (title + 3 icon blocks) */}
-      <section id="about" className="py-14 bg-neutral-50">
+      <section id="about" className="py-8">
         <Container>
           <h2 className="text-center text-2xl sm:text-3xl font-semibold">About Me</h2>
           <p className="mt-3 text-center text-neutral-600 max-w-3xl mx-auto">
@@ -168,14 +170,21 @@ export default function App() {
       </section>
 
       {/* PROJECTS (3 cards) */}
-      <section id="projects" className="py-14">
+      <section id="projects" className="py-16 bg-slate-50">
         <Container>
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold">My Projects</h2>
+          <h2 className="text-center text-2xl sm:text-3xl font-semibold">Featured Projects</h2>
           <p className="mt-3 text-center text-neutral-600 max-w-3xl mx-auto">
 This section highlights selected projects that demonstrate my experience in software development, data analysis, cloud deployment, and problem-solving. These projects represent work I have documented and refined, with additional projects and improvements currently in progress.
           </p>
+          <AIVoiceTestAgentSeries />
+          <CircuitMindsShowcase />
           <AzureDevOpsDeploymentSeries />
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3 items-stretch">
+
+          <h3 className="mt-14 text-center text-xl sm:text-2xl font-semibold text-neutral-950">
+            Additional Projects
+          </h3>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3 items-stretch">
             {projects.map((p) => (
               <ProjectCard key={p.slug} project={p} />
             ))}
@@ -186,7 +195,7 @@ This section highlights selected projects that demonstrate my experience in soft
       
 
 {/* CONTACT (Get in Touch) */}
-<section id="contact" className="py-14 bg-neutral-50">
+<section id="contact" className="py-8">
   <Container>
     <h2 className="text-center text-2xl sm:text-3xl font-semibold">Get In Touch</h2>
     <p className="mt-3 text-center text-neutral-600">

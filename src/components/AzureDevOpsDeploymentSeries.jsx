@@ -191,9 +191,9 @@ export default function AzureDevOpsDeploymentSeries() {
     selectedProjectIndex !== null ? azureProjects[selectedProjectIndex] : null;
 
   const selectedEvidence =
-  selectedProject?.evidenceIndexes
-    .map((index) => evidenceImages[index])
-    .filter(Boolean) || [];
+    selectedProject?.evidenceIndexes
+      .map((index) => evidenceImages[index])
+      .filter(Boolean) || [];
 
   const handleEvidenceClick = (projectIndex) => {
     if (selectedProjectIndex === projectIndex) {
@@ -221,293 +221,397 @@ export default function AzureDevOpsDeploymentSeries() {
   return (
     <section id="azure-devops" className="py-14 bg-neutral-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-100">
-            <Cloud className="h-6 w-6" />
-          </div>
+        <div className="relative overflow-hidden rounded-3xl border border-amber-900/30 bg-gradient-to-br from-neutral-950 via-stone-950 to-amber-950 p-4 shadow-2xl shadow-amber-950/30 sm:p-6">
+          <div className="pointer-events-none absolute left-10 top-10 h-44 w-44 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="pointer-events-none absolute bottom-10 right-10 h-56 w-56 rounded-full bg-orange-500/10 blur-3xl" />
 
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-950">
-            Azure Cloud & DevOps Deployment Series
-          </h2>
-
-          <p className="mt-3 max-w-3xl mx-auto text-neutral-600">
-            A hands-on cloud deployment series focused on building, troubleshooting, and deploying .NET applications using Azure App Service, GitHub Actions, Azure DevOps, and Azure runtime diagnostics.
-          </p>
-        </div>
-
-        <div className="mt-10 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold text-neutral-950">
-            What this demonstrates
-          </h3>
-
-          <div className="mt-4 grid gap-4 md:grid-cols-3">
-            <div className="flex gap-3 text-sm text-neutral-600">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
-              <span>CI/CD workflow configuration from source control to cloud deployment.</span>
-            </div>
-
-            <div className="flex gap-3 text-sm text-neutral-600">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
-              <span>Deployment troubleshooting using logs, Kudu, and Azure App Settings.</span>
-            </div>
-
-            <div className="flex gap-3 text-sm text-neutral-600">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
-              <span>Build artifacts, deployment jobs, and application runtime configuration.</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 grid gap-6 lg:grid-cols-3 items-stretch">
-          {azureProjects.map((project, projectIndex) => {
-            const Icon = project.icon;
-            const isSelected = selectedProjectIndex === projectIndex;
-
-            return (
-              <article
-                key={project.title}
-                className={`group flex h-full flex-col rounded-xl border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 ${
-                  isSelected
-                    ? "border-blue-300 ring-2 ring-blue-100"
-                    : "border-neutral-200 hover:border-blue-200"
-                }`}
-              >
-                <div className="mb-5 flex items-start justify-between gap-4">
-                  <div className="rounded-lg bg-blue-50 p-3 text-blue-700 transition-colors duration-300 group-hover:bg-blue-100">
-                    <Icon className="h-6 w-6" />
-                  </div>
-
-                  <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700 ring-1 ring-green-100">
-                    Completed
-                  </span>
+          <div className="relative">
+            {/* Header + deployment pipeline */}
+            <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-8 backdrop-blur sm:p-10 lg:p-12">
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-300/20 bg-amber-400/10 px-4 py-2 text-sm font-medium tracking-wide text-amber-200">
+                  <Cloud className="h-4 w-4" />
+                  Cloud & DevOps Deployment Project
                 </div>
 
-                <h3 className="text-lg font-semibold text-neutral-950">
-                  {project.title}
-                </h3>
+                <h2 className="mt-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                  Azure Cloud & DevOps Deployment Series
+                </h2>
 
-                <p className="mt-1 text-sm font-medium text-blue-700">
-                  {project.subtitle}
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-stone-300 sm:text-base">
+                  A hands-on deployment series focused on building,
+                  troubleshooting, and deploying .NET applications using Azure
+                  App Service, GitHub Actions, Azure DevOps, YAML pipelines,
+                  branch policies, agent pools, and runtime diagnostics.
                 </p>
 
-                <p className="mt-4 text-sm leading-6 text-neutral-600">
-                  {project.description}
-                </p>
-
-                <div className="mt-6">
-                  <h4 className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-700">
-                    <Wrench className="h-4 w-4 text-blue-700" />
-                    Key work
-                  </h4>
-
-                  <ul className="space-y-2 text-sm text-neutral-600">
-                    {project.highlights.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-700" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                  <AzureStat title="CI/CD" text="workflow automation" />
+                  <AzureStat title="Azure" text="cloud deployment" />
+                  <AzureStat title="Debugging" text="runtime fixes" />
                 </div>
 
-                <div className="mt-auto pt-6">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tools.map((tool) => (
-                      <span
-                        key={tool}
-                        className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-600"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => handleEvidenceClick(projectIndex)}
-                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md border border-blue-200 bg-blue-50 px-4 py-2.5 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-100"
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="https://github.com/davidmtzh/eShopOnWeb"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-amber-400 px-5 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:bg-amber-300"
                   >
-                    <Images className="h-4 w-4" />
-                    {isSelected ? "Hide Evidence" : "View Evidence"}
-                  </button>
+                    View Repository
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+
+                  <a
+                    href="#azure-evidence-gallery"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/10 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/15"
+                  >
+                    View Evidence
+                  </a>
                 </div>
-              </article>
-            );
-          })}
-        </div>
-
-        <div
-          className={`overflow-hidden transition-all duration-500 ease-in-out ${
-            selectedProject ? "mt-8 max-h-[1200px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          {selectedProject && selectedEvidence.length > 0 && (
-            <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-lg shadow-blue-500/10">
-              <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">
-                    Evidence Gallery
-                  </p>
-
-                  <h3 className="mt-1 text-xl font-semibold text-neutral-950">
-                    {selectedProject.title}
-                  </h3>
-
-                  <p className="mt-1 text-sm text-neutral-600">
-                    {selectedProject.subtitle}
-                  </p>
-                </div>
-
-                <p className="text-xs text-neutral-500">
-                  {activeImageIndex + 1} of {selectedEvidence.length}
-                </p>
               </div>
 
-              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.3fr] lg:items-start">
-                <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
-                  <h4 className="text-sm font-semibold text-neutral-950">
-                    Summary
-                  </h4>
-
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-neutral-600">
-                    {selectedProject.evidenceSummary.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-950">
-                  <div className="relative">
-                    <button
-                      type="button"
-                      onClick={() => setIsImageModalOpen(true)}
-                      className="block w-full cursor-zoom-in bg-neutral-100"
-                    >
-                      <img
-                        src={selectedEvidence[activeImageIndex].src}
-                        alt={selectedEvidence[activeImageIndex].alt}
-                        className="h-[260px] w-full object-contain object-top sm:h-[360px] lg:h-[430px]"
-                        loading="lazy"
-                      />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={showPreviousImage}
-                      className="absolute left-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm transition hover:bg-white"
-                      aria-label="Previous evidence image"
-                    >
-                      <ChevronLeft className="h-5 w-5" />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={showNextImage}
-                      className="absolute right-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm transition hover:bg-white"
-                      aria-label="Next evidence image"
-                    >
-                      <ChevronRight className="h-5 w-5" />
-                    </button>
+              <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur sm:p-8">
+                <div className="mb-5 flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-white">
+                      Deployment Pipeline
+                    </p>
+                    <p className="text-xs text-amber-100/60">
+                      Source control to cloud-hosted application
+                    </p>
                   </div>
 
-                  <div className="flex items-center justify-between gap-4 border-t border-neutral-800 bg-neutral-950 px-4 py-3">
-                    <p className="text-sm font-medium text-white">
-                      {selectedEvidence[activeImageIndex].label}
+                  <div className="flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-300 ring-1 ring-amber-400/20">
+                    <span className="h-2 w-2 rounded-full bg-amber-300" />
+                    Completed
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <DeploymentStep
+                    icon={Github}
+                    title="GitHub Repository"
+                    text="Application source code and workflow configuration"
+                  />
+                  <DeploymentStep
+                    icon={Workflow}
+                    title="CI/CD Workflow"
+                    text="Build, test, publish, and deployment automation"
+                  />
+                  <DeploymentStep
+                    icon={Server}
+                    title="Azure DevOps Agent"
+                    text="Microsoft-hosted and self-hosted pipeline execution"
+                  />
+                  <DeploymentStep
+                    icon={Images}
+                    title="Pipeline Artifacts"
+                    text="Website and Bicep artifacts generated by the pipeline"
+                  />
+                  <DeploymentStep
+                    icon={Cloud}
+                    title="Azure App Service"
+                    text="Final application hosted and verified in Azure"
+                    isLast
+                  />
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-white/10 bg-black/25 p-4 font-mono text-xs text-amber-100/80">
+                  <p className="text-amber-300">● pipeline.started</p>
+                  <p className="mt-1">→ restore.build.test</p>
+                  <p className="mt-1">→ artifacts.published</p>
+                  <p className="mt-1">→ appservice.deployment</p>
+                  <p className="mt-1 text-yellow-300">→ production.running</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Project cards */}
+            <div className="mt-6 grid gap-6 lg:grid-cols-3 items-stretch">
+              {azureProjects.map((project, projectIndex) => {
+                const Icon = project.icon;
+                const isSelected = selectedProjectIndex === projectIndex;
+
+                return (
+                  <article
+                    key={project.title}
+                    className={`group flex h-full flex-col rounded-3xl border p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 ${
+                      isSelected
+                        ? "border-amber-300/50 bg-amber-400/10 shadow-lg shadow-amber-500/10"
+                        : "border-white/10 bg-white/[0.06] hover:border-amber-300/30 hover:bg-amber-400/10"
+                    }`}
+                  >
+                    <div className="mb-5 flex items-start justify-between gap-4">
+                      <div className="rounded-xl bg-amber-400/10 p-3 text-amber-200 ring-1 ring-amber-300/15 transition-colors duration-300 group-hover:bg-amber-400/15">
+                        <Icon className="h-6 w-6" />
+                      </div>
+
+                    </div>
+
+                    <h3 className="text-lg font-semibold text-white">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-1 text-sm font-medium text-amber-300">
+                      {project.subtitle}
                     </p>
 
-                    <div className="flex gap-1">
-                      {selectedEvidence.map((image, imageIndex) => (
+                    <p className="mt-4 text-sm leading-6 text-stone-300">
+                      {project.description}
+                    </p>
+
+                    <div className="mt-6">
+                      <h4 className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber-200">
+                        <Wrench className="h-4 w-4" />
+                        Key work
+                      </h4>
+
+                      <ul className="space-y-2 text-sm text-stone-300">
+                        {project.highlights.map((item) => (
+                          <li key={item} className="flex gap-2">
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-auto pt-6">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tools.map((tool) => (
+                          <span
+                            key={tool}
+                            className="rounded-full border border-amber-300/15 bg-whit px-3 py-1 text-xs text-amber-100"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => handleEvidenceClick(projectIndex)}
+                        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md border border-amber-300/20 bg-amber-400/10 px-4 py-2.5 text-sm font-medium text-amber-100 transition-colors hover:bg-amber-400/15"
+                      >
+                        <Images className="h-4 w-4" />
+                        {isSelected ? "Hide Evidence" : "View Evidence"}
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+
+            {/* Evidence gallery */}
+            <div
+              id="azure-evidence-gallery"
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                selectedProject ? "mt-6 max-h-[1200px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              {selectedProject && selectedEvidence.length > 0 && (
+                <div className="rounded-3xl border border-amber-300/15 bg-white/[0.06] p-6 shadow-lg shadow-amber-500/10 backdrop-blur">
+                  <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-wide text-amber-300">
+                        Project Evidence
+                      </p>
+
+                      <h3 className="mt-1 text-xl font-semibold text-white">
+                        {selectedProject.title}
+                      </h3>
+
+                      <p className="mt-1 text-sm text-stone-300">
+                        {selectedProject.subtitle}
+                      </p>
+                    </div>
+
+                    <p className="text-sm text-amber-100/55">
+                      {activeImageIndex + 1} of {selectedEvidence.length}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-6 lg:grid-cols-[0.9fr_1.3fr] lg:items-start">
+                    <div className="rounded-2xl border border-white/10 bg-white p-5">
+                      <h4 className="text-sm font-semibold text-white">
+                        Summary
+                      </h4>
+
+                      <ul className="mt-4 space-y-3 text-sm leading-6 text-stone-300">
+                        {selectedProject.evidenceSummary.map((item) => (
+                          <li key={item} className="flex gap-2">
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-950">
+                      <div className="relative">
                         <button
-                          key={image.src}
                           type="button"
-                          onClick={() => setActiveImageIndex(imageIndex)}
-                          className={`h-2.5 w-2.5 rounded-full transition ${
-                            activeImageIndex === imageIndex
-                              ? "bg-white"
-                              : "bg-white/30 hover:bg-white/60"
-                          }`}
-                          aria-label={`Show evidence image ${imageIndex + 1}`}
-                        />
-                      ))}
+                          onClick={() => setIsImageModalOpen(true)}
+                          className="block w-full cursor-zoom-in bg-white/95"
+                        >
+                          <img
+                            src={selectedEvidence[activeImageIndex].src}
+                            alt={selectedEvidence[activeImageIndex].alt}
+                            className="h-[260px] w-full object-contain object-top sm:h-[360px] lg:h-[430px]"
+                            loading="lazy"
+                          />
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={showPreviousImage}
+                          className="absolute left-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm transition hover:bg-white"
+                          aria-label="Previous evidence image"
+                        >
+                          <ChevronLeft className="h-5 w-5" />
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={showNextImage}
+                          className="absolute right-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm transition hover:bg-white"
+                          aria-label="Next evidence image"
+                        >
+                          <ChevronRight className="h-5 w-5" />
+                        </button>
+                      </div>
+
+                      <div className="flex items-center justify-between gap-4 border-t border-white/10 bg-black px-4 py-3">
+                        <p className="text-sm font-medium text-white">
+                          {selectedEvidence[activeImageIndex].label}
+                        </p>
+
+                        <div className="flex gap-1">
+                          {selectedEvidence.map((image, imageIndex) => (
+                            <button
+                              key={image.src}
+                              type="button"
+                              onClick={() => setActiveImageIndex(imageIndex)}
+                              className={`h-2.5 w-2.5 rounded-full transition ${
+                                activeImageIndex === imageIndex
+                                  ? "bg-amber-300"
+                                  : "bg-white/30 hover:bg-white/60"
+                              }`}
+                              aria-label={`Show evidence image ${imageIndex + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              )}
+            </div>
+
+            {/* Final outcome */}
+            <div className="mt-6 rounded-3xl border border-white/10 bg-white p-6 backdrop-blur">
+              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Final outcome
+                  </h3>
+
+                  <p className="mt-2 max-w-4xl text-sm leading-6 text-stone-300">
+                    The final eShopOnWeb deployment successfully built and
+                    deployed through GitHub Actions, ran on Azure App Service,
+                    and loaded both the storefront and admin interface after
+                    resolving CI/CD and runtime configuration issues.
+                  </p>
+                </div>
+
+                <a
+                  href="https://github.com/davidmtzh/eShopOnWeb"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-amber-400 px-5 py-2.5 text-sm font-semibold text-neutral-950 transition-colors hover:bg-amber-300"
+                >
+                  View Repository
+                  <ExternalLink className="h-4 w-4" />
+                </a>
               </div>
             </div>
-          )}
-        </div>
-
-        <div className="mt-8 rounded-xl border border-blue-100 bg-blue-50 p-6">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <h3 className="text-lg font-semibold text-neutral-950">
-                Final outcome
-              </h3>
-
-              <p className="mt-2 max-w-4xl text-sm leading-6 text-neutral-600">
-                The final eShopOnWeb deployment successfully built and deployed through GitHub Actions, ran on Azure App Service, and loaded both the storefront and admin interface after resolving CI/CD and runtime configuration issues.
-              </p>
-            </div>
-
-            <a
-              href="https://github.com/davidmtzh/eShopOnWeb"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-blue-700 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-800"
-            >
-              View Repository
-              <ExternalLink className="h-4 w-4" />
-            </a>
           </div>
         </div>
       </div>
+
       {isImageModalOpen && selectedEvidence.length > 0 && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4">
-    <button
-      type="button"
-      onClick={() => setIsImageModalOpen(false)}
-      className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
-    >
-      Close
-    </button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4">
+          <button
+            type="button"
+            onClick={() => setIsImageModalOpen(false)}
+            className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
+          >
+            Close
+          </button>
 
-    <button
-      type="button"
-      onClick={showPreviousImage}
-      className="absolute left-5 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 transition hover:bg-white"
-      aria-label="Previous evidence image"
-    >
-      <ChevronLeft className="h-6 w-6" />
-    </button>
+          <button
+            type="button"
+            onClick={showPreviousImage}
+            className="absolute left-5 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 transition hover:bg-white"
+            aria-label="Previous evidence image"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
 
-    <img
-      src={selectedEvidence[activeImageIndex].src}
-      alt={selectedEvidence[activeImageIndex].alt}
-      className="max-h-[85vh] max-w-[92vw] rounded-lg object-contain shadow-2xl"
-    />
+          <img
+            src={selectedEvidence[activeImageIndex].src}
+            alt={selectedEvidence[activeImageIndex].alt}
+            className="max-h-[85vh] max-w-[92vw] rounded-lg object-contain shadow-2xl"
+          />
 
-    <button
-      type="button"
-      onClick={showNextImage}
-      className="absolute right-5 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 transition hover:bg-white"
-      aria-label="Next evidence image"
-    >
-      <ChevronRight className="h-6 w-6" />
-    </button>
+          <button
+            type="button"
+            onClick={showNextImage}
+            className="absolute right-5 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-900 transition hover:bg-white"
+            aria-label="Next evidence image"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
 
-    <div className="absolute bottom-5 left-1/2 w-[90vw] max-w-3xl -translate-x-1/2 rounded-lg bg-white/95 px-4 py-3 text-center shadow-lg">
-      <p className="text-sm font-semibold text-neutral-900">
-        {selectedEvidence[activeImageIndex].label}
-      </p>
-      <p className="mt-1 text-xs text-neutral-600">
-        {activeImageIndex + 1} of {selectedEvidence.length}
-      </p>
-    </div>
-  </div>
-)}
+          <div className="absolute bottom-5 left-1/2 w-[90vw] max-w-3xl -translate-x-1/2 rounded-lg bg-white/95 px-4 py-3 text-center shadow-lg">
+            <p className="text-sm font-semibold text-neutral-900">
+              {selectedEvidence[activeImageIndex].label}
+            </p>
+            <p className="mt-1 text-xs text-neutral-600">
+              {activeImageIndex + 1} of {selectedEvidence.length}
+            </p>
+          </div>
+        </div>
+      )}
     </section>
+  );
+}
+
+function AzureStat({ title, text }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white p-4 backdrop-blur">
+      <p className="text-2xl font-semibold text-white">{title}</p>
+      <p className="mt-1 text-xs text-amber-100/65">{text}</p>
+    </div>
+  );
+}
+
+function DeploymentStep({ icon: Icon, title, text, isLast = false }) {
+  return (
+    <div className="relative flex gap-4">
+      <div className="flex flex-col items-center">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-200 ring-1 ring-amber-300/20">
+          <Icon className="h-5 w-5" />
+        </div>
+
+        {!isLast && <div className="h-8 w-px bg-amber-300/20" />}
+      </div>
+
+      <div className="pb-3">
+        <p className="font-medium text-white">{title}</p>
+        <p className="mt-1 text-sm text-amber-100/60">{text}</p>
+      </div>
+    </div>
   );
 }

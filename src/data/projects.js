@@ -1,21 +1,5 @@
 export const projects = [
-  {
-    slug: "circuit-minds",
-    name: "Circuit Minds",
-    summary:
-      "Full-stack education platform built with a monorepo architecture, featuring public web pages, portal functionality, backend API services, and Supabase-powered authentication and data management.",
-    tags: ["Next.js", "NestJS", "Supabase", "PostgreSQL", "TypeScript"],
-    image: "/React-Portfolio/projects/circuit-minds-cover.png",
-    links: {
-      github: "https://github.com/davidmtzh/circuit-minds",
-      demo: "https://circuit-minds-web.vercel.app/",
-    },
-    highlights: [
-      "Built a multi-app monorepo with separate web, app, and API services",
-      "Integrated Supabase for authentication, database access, and backend workflows",
-      "Implemented and tested platform features for courses, sessions, and enrollments",
-    ],
-  },
+ 
   {
     slug: "distributed-linux-infrastructure-project",
     name: "Distributed Linux Infrastructure Project",
